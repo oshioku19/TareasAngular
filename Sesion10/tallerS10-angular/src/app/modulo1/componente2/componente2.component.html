@@ -1,0 +1,26 @@
+ <h1>Registro de datos</h1>
+<form>
+    <input type="text" placeholder="Nombres" name="nombre" [(ngModel)]="nom">
+    <input type="text" placeholder="Apellidos" name="apellido" [(ngModel)]="ape">
+    <input type="button" value="Enviar" (click)="Agregar()">
+</form>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Nro</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let fila of datos; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{fila.Nombre}}</td>
+            <td>{{fila.Apellido}}</td>
+            <td>
+                <button class="btn btn-warning" value={{i}} (click)="Eliminar(i)">X</button>
+            </td>
+        </tr>
+    </tbody>
+</table> 

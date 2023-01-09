@@ -1,0 +1,44 @@
+<body>
+    <div id="contenedor"> 
+        <div id="contenedorcentrado">
+            <div id="login">
+                <form id="loginform">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" type="text" name="nombre" placeholder="nombre"  [(ngModel)]="nom">
+                    
+                    <label for="apellido">Apellido</label>
+                    <input id="apellido" type="text" placeholder="Apellido" name="apellido"  [(ngModel)]="ape">
+
+                    <label for="edad">Edad</label>
+                    <input id="edad" type="text" placeholder="Edad" name="edad"  [(ngModel)]="edad">
+                    
+                    <input type="button" value="Enviar" (click)="Agregar()">
+                </form>
+    
+            </div>
+            <div id="derecho">
+                <div class="pie-form">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                        <th>Nro</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Edad</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let fila of datos; let i=index">
+                        <td>{{i+1}}</td>
+                        <td>{{fila.Nombre}}</td>
+                        <td>{{fila.Apellido}}</td>
+                        <td>{{fila.Edad}}</td>
+                        </tr>
+                        </tbody>
+                        </table>
+                
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>

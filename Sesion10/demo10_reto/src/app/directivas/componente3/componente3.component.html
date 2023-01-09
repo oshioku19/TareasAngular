@@ -1,0 +1,35 @@
+
+  
+
+    <section class="row">
+      
+      <section class="col-6">
+
+        <form action="" (ngSubmit)="Agregar()">
+          <section class="card w-50 mx-auto mt-5">
+            <section class="card-body text-center">
+              <input type="text" class="form-control mb-3" name="tarea" placeholder="Ingresa nombre de la Tarea"  [(ngModel)]="tarea">
+              <textarea class="form-control" rows="5" placeholder="Ingresa descripción" name="descripcion" [(ngModel)]="descripcion" ></textarea>
+              <button class="btn btn-primary mt-5" type="submit" (click)="Agregar()">Enviar</button>
+            </section> 
+          </section>
+        </form>
+    
+      </section>
+
+      <section class="col-6">
+        <app-componente4 [tareas]="tareas"></app-componente4>
+      </section>
+    
+    
+    </section>
+
+   
+      
+     
+     
+      
+         
+   
+
+        

@@ -1,0 +1,39 @@
+<body>
+    <div id="contenedor"> 
+        <div id="contenedorcentrado">
+            <div id="login">
+                <form id="loginform">
+                    <label for="usuario">Usuario</label>
+                    <input id="usuario" type="text" name="usuario" placeholder="Usuario" required #txtUser>
+                    
+                    <label for="password">Contraseña</label>
+                    <input id="password" type="password" placeholder="Contraseña" name="password" required #txtPass>
+                    
+                    <input type="button" value="Enviar" (click)="Validar(txtUser.value, txtPass.value)">
+                </form>
+                <p>{{mensaje}}</p>
+                
+            </div>
+            <div id="derecho">
+                <div class="pie-form">
+                    <p *ngIf="resultado == true"> </p>
+                    <ng-template [ngIf]="resultado == true" #true>
+                        <div class="titulo">
+                          Bienvenido {{username}}
+                        </div>
+                        <hr>
+                        <ul class="list-group">
+                          <li>
+                            <a href="#">Home</a> 
+                            <a href="#">Support</a> 
+                            <a href="#">Contact</a>
+                          </li> 
+                        </ul>
+                      </ng-template>
+                      
+                
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>

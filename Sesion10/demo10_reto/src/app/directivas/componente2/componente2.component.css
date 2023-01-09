@@ -1,0 +1,13 @@
+footer {
+    background-color: lightgrey;
+    border-radius: 1rem;
+    height: 110px;
+    width: 100%;
+    margin-top: 5px;
+    
+}
+
+label {
+    margin-left: 45%;
+    margin-top: 3%;
+}

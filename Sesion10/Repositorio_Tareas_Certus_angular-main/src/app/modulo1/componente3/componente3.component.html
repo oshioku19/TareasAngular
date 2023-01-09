@@ -1,0 +1,58 @@
+<main class="container">
+  <section class="row mb-5">
+
+
+    <article class="col-6">
+
+      <h3 class="text-center mt-4">Registro de Tareas</h3>
+
+      <form action="" (ngSubmit)="Agregar()" >
+
+        <section class="input-group mb-2 mt-3">
+          <label for="" class="input-group-text">Tarea: </label>
+          <input type="text" class="form-control" [(ngModel)]="nombre" name="nombre" placeholder="Ingresa la tarea">
+        </section>
+
+        <section class="input-group mt-2">
+          <label for="" class="input-group-text">Caja Texto: </label>
+          <textarea name="cajaTexto" [(ngModel)]="cajaTexto" class="form-control" placeholder="Ingresa la tarea"></textarea>
+        </section>
+
+
+        <!-- El dom de aca abajo se usa en el reto -->
+        <!-- <section class="d-flex mt-3 justify-content-center">
+          <button class="btn btn-success" type="submit">Guardar</button>
+        </section> -->
+
+
+
+        <!-- El dom de esta parte - Actividad Asincrona-->
+        <section class="" *ngIf="nombre.trim()!=='' && cajaTexto.trim()!=='';else mostrar">
+          <section class="d-flex mt-3 justify-content-center">
+            <button class="btn btn-success" type="submit">Guardar</button>
+          </section>
+        </section>
+
+      </form>
+
+
+      <ng-template #mostrar>
+        <div class="alert alert-warning mt-3" role="alert">
+          {{mensaje}}
+        </div>
+      </ng-template>
+
+
+    </article>
+
+
+
+    <article class="col-6">
+      <app-componente4 [datos]="datos" [eliminar]="eliminar"></app-componente4>
+    </article>
+
+
+
+  </section>
+</main>
+

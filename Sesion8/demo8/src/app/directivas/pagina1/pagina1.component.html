@@ -1,0 +1,29 @@
+<p>pagina1 works!</p>
+<p>nombre: {{name}} </p>
+<p>edad: {{edad}} </p>
+
+<p *ngIf="edad<18 else mayor">Es menor de edad</p>
+<ng-template #mayor>
+   <p>es mayor de edad</p> 
+   <p>Sueldos:</p>
+<ul class="list-group">
+    <li *ngFor="let x of sueldo" class="list-group-item">
+      <a href="#">{{ x }}</a>  
+
+    </li>
+</ul>
+</ng-template>
+
+
+<form action="">
+    <input type="text" #txtUser>
+    <input type="button" value="Enviar" (click)="Validar(txtUser.value)">
+</form>
+
+<p *ngIf="resultado==true; else error">Usuario correcto</p>
+    <ng-template #error>
+       <p>usuario incorrecto</p> 
+    </ng-template>
+
+    <p>Resultado {{mensaje}}</p>
+    
