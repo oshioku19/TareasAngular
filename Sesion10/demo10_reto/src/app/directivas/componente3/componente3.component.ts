@@ -9,6 +9,7 @@ export class Componente3Component {
 tarea = "";
 descripcion= "";
 tareas= new Array;
+mensaje="complete los espacios en blanco"
 
 Agregar() {
   if(this.tarea!=""){
@@ -16,5 +17,8 @@ Agregar() {
   this.tarea = '';
   this.descripcion = '';}
 }
-
+eliminar(numero: number){
+  this.tareas.splice(numero, 1);
+  console.log(numero);
+}
 }
