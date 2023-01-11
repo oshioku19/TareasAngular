@@ -12,10 +12,14 @@ datos = new Array;
 nom = "";
 ape = "";
 edad = "";
+mayor = "mayor"
+menor = "menor"
 
 // Metodo para Añadir valores al array
 Agregar(){
 this.datos.push({'Nombre': this.nom, 'Apellido': this.ape, 'Edad': this.edad});
 }
 
+
 }
+

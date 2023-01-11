@@ -25,6 +25,7 @@
                         <th>Nombres</th>
                         <th>Apellidos</th>
                         <th>Edad</th>
+                        <th>Mayor o menor</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -33,6 +34,7 @@
                         <td>{{fila.Nombre}}</td>
                         <td>{{fila.Apellido}}</td>
                         <td>{{fila.Edad}}</td>
+                        <td >{{fila.Edad>= 18 ? mayor : menor }}</td>
                         </tr>
                         </tbody>
                         </table>
