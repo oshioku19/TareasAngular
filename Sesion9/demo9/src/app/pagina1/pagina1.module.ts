@@ -1,18 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DirectivasComponent } from './directivas/directivas.component';
+import { FormsModule } from '@angular/forms';
+import { RetoComponent } from './reto/reto.component';
 
 
 
 @NgModule({
   declarations: [
-    DirectivasComponent
+    DirectivasComponent,
+    RetoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports:[
-    DirectivasComponent
+    DirectivasComponent,
+    RetoComponent
   ]
 })
 export class Pagina1Module { }

@@ -1,0 +1,21 @@
+
+<section [ngStyle]="{'margin-left': '10rem'}">
+    <input type="checkbox" value="{{valor}}" (click)="Generar()">
+    <label [ngStyle]="{'padding': '6px'}" for=""> Is active</label>
+    <p *ngIf="mostrar; else generar">{{mensaje}}</p>
+</section>
+
+<ng-template #generar>
+
+    <div class="card" [ngStyle]="{'width': '18rem'}">
+         <img class="card-img" src="assets/logito.png" alt="Card image cap" [ngStyle]="{'background-color': 'grey'}">
+         <div class="card-body">
+            <h5 class="card-title">Angular</h5>
+            <p class="card-text">Angular es un Framework para aplicaciones web desarrollado en TypeScript, de código abierto, mantenido
+            para crear y mantener aplicaciones web de una osla página.
+         </p>
+        </div>
+    </div>
+</ng-template>
+ 
+

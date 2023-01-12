@@ -3,3 +3,63 @@
 <H2>Ocultar/Mostrar</H2>
 <input type="button" value={{valor}} (click)="Generar()">
 <p *ngIf="mostrar">{{mensaje}}</p>
+
+<h2> Utilizando NgModel para vincular el DOM con variables</h2>
+<form action="">
+    <input type="text" name="nom" placeholder="nombre" [(ngModel)]="nombre" >
+    <p>{{nombre}}</p>
+    <input type="text" name="ape" placeholder="apellido" [(ngModel)]="apellido">
+    <p>{{apellido}}</p>
+</form>
+
+<form action="">
+    <input type="number" name="number"  [(ngModel)]="valor1" (input)="Sumar()">
+    <input type="number" name="numer" [(ngModel)]="valor2" (input)="Sumar()">
+    <p>
+        <strong>{{valor1}} + </strong>
+        <strong>{{valor2}} = </strong>
+        <strong>{{resultado}}</strong>
+    </p>
+ 
+</form>
+
+<h2>Ejemplos con ngStyle</h2>
+<p [ngStyle]="{'background-color' : ' yellow' }">Angular - Básico I</p>
+
+
+
+<table>
+    <tr *ngFor="let num of [1,2,3,4,5]">
+        <td [ngStyle]="{'background-color': num>3? 'red':'yellow'}"> {{num}} - Angular</td>
+    </tr>
+</table>
+
+<h2 [ngStyle]="{'background-color':color()}"> Color con retorno</h2>
+
+<p *ngFor="let n of [10,15,20,25]" [ngStyle]="{'font-size.px': n}" >tamaño de fuente {{n}}</p>
+
+<h2>Ejemplo con ngSwitch</h2>
+<p>
+    Ingresar numero1: <input [(ngModel)]="num1" type="number">
+</p>
+<p>
+    Ingresar numero1: <input [(ngModel)]="num2" type="number">
+</p>
+<p>
+    <select [(ngModel)]="operacion" name="" id="">
+        <option value="ninguna">Seleccione una operación</option>
+        <option value="suma">suma</option>
+        <option value="resta">resta</option>
+        <option value="multi">multiplicación</option>
+        <option value="div">división</option>    
+    </select>
+</p>
+
+<p>resultado</p>
+<div [ngSwitch]="operacion">
+    <div *ngSwitchCase="'suma'">{{num1+num2}}</div>
+    <div *ngSwitchCase="'resta'">{{num1-num2}}</div>
+    <div *ngSwitchCase="'multi'">{{num1*num2}}</div>
+    <div *ngSwitchCase="'div'">{{num1/num2}}</div>
+    <div *ngSwitchDefault>no selecciono ninguna operacion</div>
+</div>

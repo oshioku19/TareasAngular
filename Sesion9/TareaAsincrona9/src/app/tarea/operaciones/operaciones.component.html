@@ -1,0 +1,28 @@
+
+<section class="card" [ngStyle]="{'margin': '5rem', 'width': '18rem'}">
+    <p>
+        Ingrese primer valor: <input [(ngModel)]="num1" type="number">
+    </p>
+    <p>
+        Ingrese segundo valor: <input [(ngModel)]="num2" type="number">
+    </p>
+    <p>
+        <select [(ngModel)]="operacion">
+            <option value="ninguna">Elije una opción</option>
+            <option value="suma">suma</option>
+            <option value="resta">resta</option>
+            <option value="multi">multiplicación</option>
+            <option value="div">división</option>    
+        </select>
+    </p>
+    
+    
+    <div [ngSwitch]="operacion">
+        <label for=""> Resultado:</label>
+        <div [ngStyle]="{'color': 'blue'}"  *ngSwitchCase="'suma'">{{num1+num2}} </div>
+        <div [ngStyle]="{'color': 'chocolate'}" *ngSwitchCase="'resta'">{{num1-num2}}  </div>
+        <div [ngStyle]="{'color': 'brown'}" *ngSwitchCase="'multi'">{{num1*num2}}  </div>
+        <div [ngStyle]="{'color': 'aqua'}" *ngSwitchCase="'div'">{{num1/num2}}  </div>
+        <div [ngStyle]="{'color': 'red'}" *ngSwitchDefault>(no eligió la operación)</div>
+    </div>
+</section>
