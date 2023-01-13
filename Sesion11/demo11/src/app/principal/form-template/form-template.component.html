@@ -1,0 +1,43 @@
+<h1>Formulario basado en template</h1>
+<section class="container-sm">
+    <form #formulario="ngForm">
+        <section class="form-group m-3">
+            <label for="user">username</label>
+            <input type="text" class="form-control" name="user" [(ngModel)]="model.username" required #username="ngModel">    
+            <!-- Validaciones -->
+            <section *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+                <section *ngIf="username.errors?.['required']"> El campo es requerido</section>
+            </section>
+        </section>
+
+        <section class="form-group m-3">
+            <label for="pass">password</label>
+            <input type="password" class="form-control" name="pass" [(ngModel)]="model.password" required minlength="4" #password="ngModel">
+            <!-- Validaciones -->
+            <section *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                <section *ngIf="password.errors?.['required']"> El password es requerido</section>
+                <section *ngIf="password.errors?.['minlength']"> El password debe tener al menos 4 caracteres</section>
+            </section>
+        </section>
+         
+        <!-- Control select con componente enum -->
+        <section class="form-group m-3">
+            <label for="paises">Selecciona un país</label>
+            <select class="form-control" name="paises" [(ngModel)]="model.pais">
+                <option *ngFor="let item of paises" value={{item.value}}> {{item.text}}</option>
+            </select>
+        </section>
+
+        <!-- Control checkbox -->
+        <section class="form-group">
+            <input type="checkbox" class="form-check-input" name="ofertas" [(ngModel)]="model.ofertas">
+            <label class="form-check-label"> ¿Desea recibir ofertas?</label>
+        </section>
+
+        <section class="form-group m-3">
+            <button type="submit" class="btn btn-primary" (click)="enviar()" [disabled]="!formulario.form.valid">Enviar</button>
+            <button type="cancel" class="btn btn-warning" (click)="cancelar()">Cancelar</button>
+        </section>
+    </form>
+
+</section>
