@@ -1,0 +1,42 @@
+
+<h1 [ngStyle]="{'margin-left': '19rem'}" >Formulario </h1>
+<section class="container-sm">
+    <form #formulario="ngForm">
+        <section class="form-group m-3">
+            <label for="user">nombre </label>
+            <input type="text" class="form-control" name="nom" [(ngModel)]="model.nombre" required minlength="10" #nombre="ngModel">    
+            <!-- Validaciones -->
+            <section *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="alert alert-danger">
+                <section *ngIf="nombre.errors?.['required']"> El campo es requerido</section>
+                <section *ngIf="nombre.errors?.['minlength']"> El nombre debe tener al menos 10 caracteres</section>
+            </section> 
+        </section>     
+   
+        <section class="form-group m-3">
+            <label for="email">email</label>
+            <input type="email" class="form-control" name="email" ngModel [email]="true"  [(ngModel)]="model.email" required  #email="ngModel">
+            <!-- Validaciones -->
+            <section *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                <section *ngIf="email.errors?.['required']"> El email es requerido</section>
+                <section *ngIf="email.hasError('validEmail')">Email inválido</section>
+                <section *ngIf="email.errors?.['email']"> El email no es válido</section>
+            </section>
+        </section>
+         
+        <section class="form-group m-3">
+            <label for="mensaje">mensaje</label>
+          <textarea class="form-control" rows="5" name="mensaje" [(ngModel)]="model.mensaje" required maxlength="500" #mensaje='ngModel'></textarea>
+          <!-- Validaciones -->
+            <section *ngIf="mensaje.invalid && (mensaje.dirty || mensaje.touched)" class="alert alert-danger">
+                <section *ngIf="mensaje.errors?.['required']"> El mensaje no puede quedar vacio</section>
+                <section *ngIf="mensaje.errors?.['maxlength']"> El mensaje no debe superar los 500 caracteres</section>
+                
+            </section> 
+        </section>
+
+        <section class="form-group m-3">
+            <button type="submit" class="btn btn-primary" [disabled]="!formulario.form.valid" >Confirmar</button>
+        </section>
+    </form>
+
+</section>

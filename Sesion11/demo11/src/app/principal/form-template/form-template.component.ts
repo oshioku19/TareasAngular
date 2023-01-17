@@ -8,12 +8,12 @@ import { Registro } from 'src/app/modelo/registro';
   styleUrls: ['./form-template.component.css']
 })
 export class FormTemplateComponent {
-  //moedl es un atributo basado en la interfaz de registro
+  //model es un atributo basado en la interfaz de registro
 model: Registro = {username:"", password:"", pais:Listado.Ninguno, ofertas:false};
 
   enviar(){
     console.log(this.model);
-    alert ("holaaaaa")
+    alert ("se ha ha registrado correctamente")
   }
 
   cancelar(){

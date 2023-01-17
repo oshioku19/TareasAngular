@@ -1,0 +1,14 @@
+<h1 [ngStyle]="{'margin-left': '19rem'}">Formulario Reactivo</h1>
+<section class="container-sm">
+    <form #formulario="ngForm">
+        <section class="form-group m-3">
+            <label for="user">Name:</label>
+            <input type="text" class="form-control" name="user" [(ngModel)]="model.username" required #username="ngModel">    
+            <!-- Validaciones -->
+            <section *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+                <section *ngIf="username.errors?.['required']"> El campo es requerido</section>
+            </section>
+            <p>value: {{model.username}} </p>
+        </section>
+    </form>
+</section>
