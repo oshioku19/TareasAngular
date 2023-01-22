@@ -1,0 +1,63 @@
+<h1 class="text-center" [ngStyle]="{'color': 'rgb(18, 133, 171)'}">Formulario de Contacto</h1>
+
+
+<section class="container sm-3">
+    <section *ngIf="aviso">
+        <div class="text-center" [ngStyle]="{'background-color': 'lightcoral'}" >Gracias por comunicarte con nosotros!</div>
+    </section>
+<form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+    <section class="form-group sm-3">
+        <label for="nombre"> Nombre:</label>
+       <input type="text" class="form-control"  
+       [ngStyle]="{'border-color':nombre?.invalid && (nombre?.dirty || nombre?.touched)? 'red':'green' }"
+       formControlName="nombre">
+       <section *ngIf="nombre?.invalid && (nombre?.dirty || nombre?.touched)">
+        <section *ngIf="nombre?.errors?.['required']" class="alert alert-danger">
+            El nombre es obligatorio
+        </section>
+    </section>
+</section>
+
+    <section class="form-group sm-3">
+        <label for="email"> Email:</label>
+       <input type="email" class="form-control" [ngStyle]="{'border-color':email?.invalid && (email?.dirty || email?.touched)? 'red':'green' }"
+       formControlName="email">
+       <section *ngIf="email?.errors?.['required']" class="alert alert-danger">
+        El email es obligatorio
+    </section>
+    </section>
+
+    <section class="form-group sm-3">
+        <label for="telefono"> Telefono:</label>
+       <input type="number" class="form-control" [ngStyle]="{'border-color':telefono?.invalid && (telefono?.dirty || telefono?.touched)? 'red':'green' }"
+       formControlName="telefono">
+       <section *ngIf="telefono?.errors?.['required']" class="alert alert-danger">
+        El telefono es obligatorio
+    </section>
+    </section>
+
+    <section class="form-group sm-3">
+        <label for="asunto"> Asunto:</label>
+       <textarea name="asunto" class="form-control" [ngStyle]="{'border-color':asunto?.invalid && (asunto?.dirty || asunto?.touched)? 'red':'green' }"
+       formControlName="asunto"></textarea>
+       <section *ngIf="asunto?.errors?.['required']" class="alert alert-danger">
+        El asunto es obligatorio
+    </section>
+    </section>
+
+    <section class="form-group sm-3">
+        <label for="mensaje"> Mensaje:</label>
+        <textarea name="mensaje" class="form-control" [ngStyle]="{'border-color':mensaje?.invalid && (mensaje?.dirty || mensaje?.touched)? 'red':'green' }"
+        formControlName="mensaje"></textarea>
+        <section *ngIf="mensaje?.errors?.['required']" class="alert alert-danger">
+            El mensaje es obligatorio
+        </section>
+    </section>
+
+    <section class="form-group sm-3">
+        <input type="submit" value="enviar" [ngStyle]="{'margin-left': '40rem', 'margin-top':'2rem'}" [disabled]="registroForm.invalid" class="btn btn-primary"> 
+                
+    </section>
+
+</form>
+</section>

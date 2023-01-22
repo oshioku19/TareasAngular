@@ -1,0 +1,62 @@
+
+<section class="container-sm">
+    <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+        <div class="card sm-3">
+            <h1 class="text-center">Bienvenidos</h1>
+            <h2 class="text-center">Form Data</h2>
+        
+            <section class="form-group m-3">
+                <label for="nombres">Nombre completo:</label>
+                <input type="text" class="form-control" formControlName="nombres">
+                <section *ngIf="nombres?.invalid && (nombres?.dirty || nombres?.touched)">
+                    <section *ngIf="nombres?.errors?.['required']" class="alert alert-danger">
+                        El nombre es obligatorio
+                    </section>
+                </section>
+            </section>
+        
+            <section class="form-group m-3">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" class="form-control" formControlName="apellidos">
+                <section *ngIf="apellidos?.invalid && (apellidos?.dirty || apellidos?.touched)">
+                    <section *ngIf="apellidos?.errors?.['required']" class="alert alert-danger">
+                        El apellido es obligatorio
+                    </section>
+                </section>
+            </section>
+        
+            <section class="form-group m-3">
+                <label for="dni">Dni:</label>
+                <input 
+                    type="number" maxlength="8" class="form-control" 
+                    [ngStyle]="{'border-color':dni?.invalid && (dni?.dirty || dni?.touched)? 'red':'green' }"
+                    formControlName="dni">
+                <section *ngIf="dni?.invalid && (dni?.dirty || dni?.touched)">
+                    <section *ngIf="dni?.errors?.['required']" class="alert alert-danger">
+                        El DNI es obligatorio
+                    </section>
+                    <section *ngIf="dni?.errors?.['pattern']" class="alert alert-danger">
+                        El DNI debe ser solo 8 digitos
+                    </section>
+                </section>
+            </section>
+        
+            <section class="form-group m-3">
+                <label for="ciudad">Ciudad:</label>
+                <input type="text" class="form-control" formControlName="ciudad">
+                <section *ngIf="ciudad?.invalid && (ciudad?.dirty || ciudad?.touched)">
+                    <section *ngIf="ciudad?.errors?.['required']" class="alert alert-danger">
+                        la ciudad es obligatorio
+                    </section>
+                </section>
+            </section>
+            <section class="form-group m-3">
+                <input type="submit" value="submit" [disabled]="registroForm.invalid" class="btn btn-primary"> 
+                <section *ngIf="mensaje">
+                    <div >Registro exitoso!</div>
+                </section>
+            </section>
+        </div>
+                
+</form>
+</section>

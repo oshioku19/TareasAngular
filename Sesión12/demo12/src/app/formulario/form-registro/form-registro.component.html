@@ -1,0 +1,81 @@
+<h1 class="text-center">FORMULARIO DE REGISTRO</h1>
+<h2 class="text-center">Formulario activo</h2>
+
+<section class="container-sm">
+    <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+        <section class="form-group m-3">
+            <label for="dni">Dni:</label>
+            <input 
+                type="number" maxlength="8" class="form-control" 
+                [ngStyle]="{'border-color':dni?.invalid && (dni?.dirty || dni?.touched)? 'red':'green' }"
+                formControlName="dni">
+            <section *ngIf="dni?.invalid && (dni?.dirty || dni?.touched)">
+                <section *ngIf="dni?.errors?.['required']" class="alert alert-danger">
+                    El DNI es obligatorio
+                </section>
+                <section *ngIf="dni?.errors?.['pattern']" class="alert alert-danger">
+                    El DNI debe ser solo 8 digitos
+                </section>
+            </section>
+        </section>
+
+        <section class="form-group m-3">
+            <label for="nombres">Nombre completo:</label>
+            <input type="text" class="form-control" formControlName="nombres">
+            <section *ngIf="nombres?.invalid && (nombres?.dirty || nombres?.touched)">
+                <section *ngIf="nombres?.errors?.['required']" class="alert alert-danger">
+                    El nombre es obligatorio
+                </section>
+            </section>
+        </section>
+
+        <section class="form-group m-3">
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" class="form-control" formControlName="apellidos">
+            <section *ngIf="apellidos?.invalid && (apellidos?.dirty || apellidos?.touched)">
+                <section *ngIf="apellidos?.errors?.['required']" class="alert alert-danger">
+                    El apellido es obligatorio
+                </section>
+            </section>
+        </section>
+
+        <section class="form-group m-3">
+            <label for="fechanac">Fecha de nacimiento:</label>
+            <input type="date" class="form-control" formControlName="fechanac">
+            <section *ngIf="fechanac?.invalid && (fechanac?.dirty || fechanac?.touched)">
+                <section *ngIf="fechanac?.errors?.['required']" class="alert alert-danger">
+                    La fecha de nacimiento es obligatorio
+                </section>
+            </section>
+        </section>
+
+        <section class="form-group m-3">
+            <label for="sueldo">Sueldo:</label>
+            <input type="number" class="form-control" formControlName="sueldo">
+            <section *ngIf="sueldo?.invalid && (sueldo?.dirty || sueldo?.touched)">
+                <section *ngIf="sueldo?.errors?.['required']" class="alert alert-danger">
+                    el sueldo es obligatorio
+                </section>
+            </section>
+        </section>
+
+        <section class="form-group m-3">
+            <label for="comision">Comisión:</label>
+            <input type="number" class="form-control" formControlName="comision">
+            <section *ngIf="comision?.invalid && (comision?.dirty || comision?.touched)">
+                <section *ngIf="comision?.errors?.['required']" class="alert alert-danger">
+                    la comision es obligatorio
+                </section>
+                <section *ngIf="comision?.errors?.['min'] || comision?.errors?.['max']  " class="alert alert-danger">
+                    la comision no es válida
+                </section>
+            </section>
+        </section>
+
+        <section class="form-group m-3">
+            <input type="submit" value="Enviar" class="btn btn-primary">
+            <input type="button" value="Refrescar" class="btn btn-success" (click)="Refrescar()">
+
+        </section>
+    </form>
+</section>
