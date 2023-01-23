@@ -55,7 +55,8 @@ export class FormRegistroComponent {
   }
 
   Refrescar(){
-    location.reload();
+    //location.reload();
+    this.registroForm.reset(); //reiniciar los valores
 
   }
 }

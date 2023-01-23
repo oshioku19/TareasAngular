@@ -22,6 +22,9 @@
         <section class="form-group m-3">
             <label for="nombres">Nombre completo:</label>
             <input type="text" class="form-control" formControlName="nombres">
+
+            <p>{{ nombres?.value | titlecase}}</p>
+
             <section *ngIf="nombres?.invalid && (nombres?.dirty || nombres?.touched)">
                 <section *ngIf="nombres?.errors?.['required']" class="alert alert-danger">
                     El nombre es obligatorio
@@ -52,6 +55,8 @@
         <section class="form-group m-3">
             <label for="sueldo">Sueldo:</label>
             <input type="number" class="form-control" formControlName="sueldo">
+            <p>{{ sueldo?.value | currency}}</p>
+
             <section *ngIf="sueldo?.invalid && (sueldo?.dirty || sueldo?.touched)">
                 <section *ngIf="sueldo?.errors?.['required']" class="alert alert-danger">
                     el sueldo es obligatorio
@@ -78,4 +83,8 @@
 
         </section>
     </form>
+    <section>
+        <app-form-listado [dato]="datos"></app-form-listado>
+    </section>
+
 </section>

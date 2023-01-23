@@ -1,1 +1,23 @@
-<p>form-listado works!</p>
+<table class="table table-hover">
+<thead>
+    <tr>
+        <th>Nro</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Fecha de Nacimiento</th>
+        <th>Suledo</th>
+        <th>Comisión</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let item of dato; let i = index">
+        <th>{{ i+1 }}</th>
+        <th>{{item.Dni}}</th>
+        <th>{{item.Nombres | uppercase}}</th>
+        <th>{{item.Apellidos | titlecase}}</th>
+        <th>{{item.FechaNac | date: 'longDate'}}</th>
+        <th>{{item.Sueldo | currency: 'PEN'}}</th>
+        <th>{{item.Comision | percent: '2.2'}}</th>
+    </tr>
+</tbody>
+</table>

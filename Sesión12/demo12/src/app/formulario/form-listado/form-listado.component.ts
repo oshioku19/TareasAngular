@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-form-listado',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./form-listado.component.css']
 })
 export class FormListadoComponent {
+
+  //Atributo que reciba datos de otro componente
+  @Input() dato=new Array;
 
 }
