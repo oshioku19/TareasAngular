@@ -1,0 +1,40 @@
+<h2 class="text-center"> USO DE PIPES </h2>
+
+<section class="container container-fluid">
+<form [formGroup]="registroForm">
+    <section class="form-group m-3">
+        <label for="valor"> valor: </label>
+        <input type="text" class="form-control" formControlName="valor">
+
+        <p>Resultado: {{valor?.value | uppercase}}</p>
+    </section>
+
+    <section *ngIf="valor?.invalid && (valor?.dirty || valor?.touched)">
+        <section *ngIf="valor?.errors?.['required']" class="alert alert-danger">
+            El valor es obligatorio
+        </section>
+        <section *ngIf="valor?.errors?.['pattern']" class="alert alert-danger">
+            El valor ingresado debe ser letras no números
+        </section>
+        <section *ngIf="valor?.errors?.['minLength']" class="alert alert-danger">
+            El valor ingresado debe contener almenos un caracter
+        </section>
+    </section>
+</form>
+
+    <h2 class="text-center"> Currency Pipe </h2>
+    <form>
+        <section class="form-group m-3">
+            <label for="valor2"> valor: </label>
+            <input type="text" class="form-control" name="valor2" [(ngModel)]="valor2">
+        </section>
+        
+        <select name="currency" class="m-3 form-group" [(ngModel)]="tipo">
+            <option selected>Selecciona el tipo de moneda:</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="PEN">PEN</option>
+        </select>
+        <p class="mt-4" *ngIf="tipo">Resultado: {{tipo}} {{valor2 | currency :tipo}}</p>
+    </form>
+</section>
