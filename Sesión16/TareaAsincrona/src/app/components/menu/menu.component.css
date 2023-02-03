@@ -1,0 +1,7 @@
+.lista{
+    min-height: 3rem;
+  }
+  
+  .li-pe:hover{
+    background-color: rgb(223, 219, 219);
+  }

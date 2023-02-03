@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TareaAsincrona": {
+    "Tarea-Asincrona": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/TareaAsincrona",
+            "outputPath": "dist/Tarea-Asincrona",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "TareaAsincrona:build:production"
+              "browserTarget": "Tarea-Asincrona:build:production"
             },
             "development": {
-              "browserTarget": "TareaAsincrona:build:development"
+              "browserTarget": "Tarea-Asincrona:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "TareaAsincrona:build"
+            "browserTarget": "Tarea-Asincrona:build"
           }
         },
         "test": {
@@ -102,6 +102,6 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "03d870d2-f9f8-4883-8092-562f7f4568b6"
   }
 }
