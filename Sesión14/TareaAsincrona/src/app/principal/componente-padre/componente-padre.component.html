@@ -1,0 +1,19 @@
+<form >
+    <section class="mb-3">
+        <label for="nombres" class="form-label">Nombre</label>
+        <input type="text" class="form-control" [(ngModel)]="nombres" name="nombres">
+    </section>
+    <section class="mb-3">
+        <label for="dni" class="form-label">DNI</label>
+        <input type="text" class="form-control" [(ngModel)]="dni" name="dni">
+    </section>
+    <section class="mb-3">
+        <label for="estadoc" class="form-label">Estado Civil</label>
+        <select [(ngModel)]="estadoc"  name="estadoc">
+            <option value="soltero">Soltero</option>
+            <option value="casado">Casado</option>
+        </select>
+    </section>
+    <button type="submit" class="btn btn-success" (click)="onSubmit()">Enviar</button>  
+</form>
+<app-componente-hijo [datos]="datos"></app-componente-hijo>
