@@ -1,0 +1,52 @@
+h2{
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-top: 2rem;
+    background: #fbc6ff;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #da79f7, #f386fb, #f7c6ff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f779f5, #fb86e9, #fec6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    padding: 1rem;
+    color:rgb(1, 60, 106);
+}
+
+.sectionGeneral{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sectionTotal{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    width: 20%;
+
+    border-bottom: 1px solid rgb(184, 184, 184);
+}
+
+.sectionColor{
+    text-align: center;
+    font-weight: bolder;
+    font-size: larger;
+    padding: 1rem;
+
+    border-radius: 2rem;
+}
+
+.sectionTitle{
+    align-content: center;
+    justify-items: center;
+
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: wrap;
+
+    text-align: center;
+
+    height: 10rem;
+}

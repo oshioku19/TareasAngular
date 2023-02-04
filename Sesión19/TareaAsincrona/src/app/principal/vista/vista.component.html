@@ -1,0 +1,13 @@
+<h2 class="text-center">Lista de photos</h2>
+<section class="sectionGeneral container-sm">
+        <section *ngFor="let item of listado" class="sectionTotal">
+            <section [ngStyle]="{'background-image': 'url(' + item.url + ')'}" class="sectionColor">{{ item.id }}</section>
+            <section class="sectionTitle">
+                <p>
+                    {{ item.title }}
+                </p>
+            </section>
+        </section>
+</section>
+
+

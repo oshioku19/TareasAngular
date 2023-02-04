@@ -1,0 +1,46 @@
+h2{
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-top: 2rem;
+    background-color: rgb(216, 216, 216);
+    padding: 1rem;
+    color:rgb(1, 60, 106);
+}
+
+table{
+    margin-top: 2rem;
+}
+
+thead{
+    background-color: rgb(0, 97, 171);
+    color: white;
+}
+
+th{
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid black;
+}
+
+th:first-child {
+    /* ORDEN PARA 4 ESQUINAS: SUP.IZQ - SUP.DER - INF.DER - INF.IZQ */
+    border-radius: 1rem 0 0 0;
+}
+
+th:last-child {
+    /* ORDEN PARA 4 ESQUINAS: SUP.IZQ - SUP.DER - INF.DER - INF.IZQ */
+    border-radius: 0 1rem 0 0;
+}
+
+td{
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+tr:nth-child(even){
+    background-color: rgb(226, 245, 255);
+}
