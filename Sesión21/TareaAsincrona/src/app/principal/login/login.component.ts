@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AutenticacionService } from 'src/app/services/autenticacion.service';
 
@@ -9,50 +8,40 @@ import { AutenticacionService } from 'src/app/services/autenticacion.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  usuario = '';
+  contra = '';
+  mostrar = false
 
-  FormGroup: any;
+  errorMensaje = '';
+  usuarioError = '';
+  contraError = '';
 
-  constructor (private autenticacion: AutenticacionService, private router: Router, private formBuilder : FormBuilder) {
-    this.loginForm = this.formBuilder.group({
-      username: ['',{validators: [Validators.required]}],
-      password: ['',{validators: [Validators.required, Validators.minLength(8)]}]
-    });
-  }
-  loginForm: any ;
-  redireccion = '';
-  botonDeshabilitado = false;
-  mostrar : boolean = false;
-  
-  private usuarios = [
-    {username: 'AD', password: '12345678'}
-  ];
+  validar = {
+    usuario: 'Lyang',
+    contra: '123456',
+  };
 
-  get username(){return this.loginForm.get('username')};
-  get password(){return this.loginForm.get('password')};
+  constructor(private autenticacion: AutenticacionService, private router: Router) { }
 
-  login(){
-    const usuario = this.usuarios.find(u => u.username === this.username.value && u.password === this.password.value);
-    if (usuario) {
-      this.autenticacion.login();
-      this.redireccion = this.autenticacion.urlUsuarioIntentaAcceder; 
-      this.autenticacion.urlUsuarioIntentaAcceder = '';
-      this.router.navigate(['/post']);
-    } else {
-      this.mostrar = true;
+  urlRedireccion = "";
+
+login() {
+  if (this.usuario === this.validar.usuario && this.contra === this.validar.contra) {
+    this.autenticacion.login();
+    this.urlRedireccion = this.autenticacion.urlUsuarioIntentaAcceder;
+    this.router.navigate([this.urlRedireccion]);
+    this.mostrar = false
+    return
+  } else {
+    this.mostrar = true
+    this.errorMensaje = 'Ingrese los datos correctamente🚨';
+    if (this.usuario === '') {
+      this.usuarioError = 'El espacio usuario es requerido';
     }
-  }
-
-  Activar(){
-    if(this.loginForm.valid){
-      this.botonDeshabilitado = true;
-    } else {
-      this.botonDeshabilitado = false;
+    if (this.contra === '') {
+      this.contraError = 'La contraseña es requerida';
     }
-  }
-
-  ngOnInit(){
-    this.loginForm.statusChanges.subscribe((status: string) => {
-      this.botonDeshabilitado = status === 'VALID';
-    });
   }
 }
+}
+

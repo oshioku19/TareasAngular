@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http"
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrincipalModule } from './principal/principal.module';
-
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { UserinterceptorsService } from './services/userinterceptors.service';
-
+import { UserInterceptorsService } from './services/user-interceptors.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,12 +16,13 @@ import { UserinterceptorsService } from './services/userinterceptors.service';
     BrowserModule,
     AppRoutingModule,
     PrincipalModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: UserinterceptorsService,
+      useClass: UserInterceptorsService,
       multi: true
     }
   ],

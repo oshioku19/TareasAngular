@@ -8,17 +8,19 @@ import { AutenticacionService } from 'src/app/services/autenticacion.service';
 })
 export class MenuComponent {
 
+  constructor(public autenticacion: AutenticacionService) { }
+
   usuariologueado = false;
-  constructor(public autenticacion: AutenticacionService){}
   
   ngOnInit(){
+
     this.usuariologueado = this.autenticacion.isLoggedIn('');
     this.autenticacion.changeLoginStatus$.subscribe(
-    (loggedSatus: boolean) => this.usuariologueado = loggedSatus
-    );
-  }
+      (estado: boolean) => this.usuariologueado = estado
+      );
+    }
   
-  logout(){
-    this.autenticacion.logout();
+    logout(){
+      this.autenticacion.logout();
   }
 }

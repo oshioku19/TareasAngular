@@ -5,6 +5,9 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class AutenticacionService {
+  group(arg0: { pass: (string | { validators: ((control: import("@angular/forms").AbstractControl<any, any>) => import("@angular/forms").ValidationErrors | null)[]; })[]; usu: (string | ((control: import("@angular/forms").AbstractControl<any, any>) => import("@angular/forms").ValidationErrors | null))[]; }) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor() { }
 
@@ -28,8 +31,8 @@ export class AutenticacionService {
     const isLogged = localStorage.getItem(this.ISLOGGEDKEY);
     if (!isLogged) {
       this.urlUsuarioIntentaAcceder = url;
-    return false;
+      return false;
     }
     return true;
-    }
+  }
 }
