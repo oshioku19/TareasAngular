@@ -1,0 +1,62 @@
+h2{
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-top: 2rem;
+    background: #2ab411;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #7BC6CC, #BE93C5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #7BC6CC, #BE93C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+    padding: 1rem;
+    color:rgb(1, 60, 106);
+}
+
+img{
+    width: 15rem;
+}
+
+.sectionButton{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: wrap;
+
+    padding-top: 2rem;
+}
+
+table{
+    margin-top: 2rem;
+}
+
+thead{
+    background-color:#4a6736;
+    color: white;
+}
+
+th{
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid black;
+}
+
+th:first-child {
+    /* ORDEN PARA 4 ESQUINAS: SUP.IZQ - SUP.DER - INF.DER - INF.IZQ */
+    border-radius: 1rem 0 0 0;
+}
+
+th:last-child {
+    /* ORDEN PARA 4 ESQUINAS: SUP.IZQ - SUP.DER - INF.DER - INF.IZQ */
+    border-radius: 0 1rem 0 0;
+}
+
+td{
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+tr:nth-child(even){
+    background-color: rgb(226, 245, 255);
+}

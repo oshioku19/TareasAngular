@@ -1,0 +1,35 @@
+a{
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgMaracuya{
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: wrap;
+}
+
+img{
+        width: 2rem;
+}
+
+nav{
+    background: #FFEEEE;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #DDEFBB, #FFEEEE);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #DDEFBB, #FFEEEE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.nav-link{
+    border-radius: 2rem;
+}
+
+.nav-link:hover{
+    background-color: rgb(0, 98, 255);
+    border-radius: 2rem;
+    font-weight: bolder;
+}

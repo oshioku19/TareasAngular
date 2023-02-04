@@ -1,0 +1,27 @@
+<h2 class="text-center">Lista de comentarios</h2>
+<section class="container-sm">
+    <section class="sectionButton">
+        <input type="button" value="Show Users' Comments" class="btn btn-primary" (click)="showTable = !showTable">
+    </section>
+    <table class="table table-hover" *ngIf="showTable">
+        <thead>
+            <tr>
+                <th>postid</th>
+                <th>id</th>
+                <th>name</th>
+                <th>email</th>
+                <th>body</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let item of listado">
+                <td>{{ item.postId }}</td>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.body }}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
