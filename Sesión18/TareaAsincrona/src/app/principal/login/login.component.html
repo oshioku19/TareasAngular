@@ -1,0 +1,42 @@
+<section class="sectionGeneral">
+    <section class="sectionForm">
+        <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+            <h4>Login</h4>
+            <section class="form-group">
+                <label for="username">Email:</label>
+                <input type="text" class="form-control" id="email" formControlName="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$">
+                <section *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                    <section *ngIf="email?.errors?.['required']" class="alert alert-danger">
+                        <p>El usuario es obligatorio</p>
+                    </section>
+                    <section *ngIf="email?.errors?.['pattern']" class="alert alert-danger alertaInput">
+                        <p>Email invalido</p>
+                    </section>
+                </section>
+            </section>
+            <section class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" formControlName="password" required pattern="([A-Za-z]{8,})">
+                <section *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+                    <section *ngIf="password?.errors?.['required']" class="alert alert-danger">
+                        <p>El password es obligatorio</p>
+                    </section>
+                    <section *ngIf="password?.errors?.['pattern']" class="alert alert-warning alertaInput">
+                        <p>Password invalido</p>
+                    </section>
+                </section>
+            </section>
+            <section class="form-group sectionButton">
+                <input type="submit" class="btn btn-light" [disabled]="!registroForm.valid" value="Log in">
+            </section>
+                        
+        </form>
+        <section *ngIf="mostrar">
+            <h6>Información del usuario</h6>
+            <section class="result">
+                {{user| json}}
+            </section>
+        </section>
+</section>
+
+

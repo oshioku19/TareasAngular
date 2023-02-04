@@ -1,0 +1,31 @@
+<section class="sectionGeneral row">
+    <section class="sectionTitle col-12">
+        <h1>Consumir api users</h1>
+    </section>
+    
+    <section class="sectionTable col-12">
+        <section>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>userid</th>                 
+                        <th>id</th>
+                        <th>title</th>
+                        <th>completed</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let item of listado">
+                        <td>{{ item.userId }}</td>
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.title }}</td>
+                        <td>{{ item.completed }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>         
+    </section>
+</section>
+

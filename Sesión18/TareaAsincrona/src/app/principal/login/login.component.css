@@ -1,0 +1,52 @@
+.sectionGeneral{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: wrap;
+}
+
+.sectionForm{
+    margin-top: 3rem;
+    padding: 3rem;
+    border: 3px solid rgb(207, 243, 169);
+    width: 30%;
+}
+
+h4{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2rem;
+    font-weight: bolder;
+    padding-bottom: 2rem;
+}
+
+.form-group{
+    padding-bottom: 2rem;
+}
+
+.sectionButton{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: wrap;
+}
+
+.btn:hover{
+    background-color: rgb(212, 245, 176);
+    border: rgb(210, 233, 168);
+}
+
+h6{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: center;
+
+    padding: 1rem;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.result{
+    background-color: rgb(198, 255, 140);
+}

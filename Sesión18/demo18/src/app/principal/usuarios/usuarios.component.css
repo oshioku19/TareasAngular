@@ -1,0 +1,53 @@
+.sectionGeneral{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: wrap;
+}
+
+.sectionTitle{
+    text-align: center;
+    padding: 1rem;
+    background-color: rgb(122, 186, 243);
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+}
+
+h1{
+    font-weight: bolder;
+}
+
+table{
+    width: 70rem;
+}
+
+thead{
+    background-color: rgb(0, 135, 180);
+    color: rgb(255, 255, 255);
+}
+
+th{
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+td{
+    text-align: center;
+    border-bottom: 0.5px solid rgb(177, 177, 177);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 5rem;
+}
+
+
+.sectionTable{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: wrap;
+
+    padding-top: 3rem;
+}
