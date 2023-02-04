@@ -1,0 +1,36 @@
+.sectionGeneral{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: wrap;
+
+    padding-top: 3rem;
+}
+
+.sectionTabla{
+    margin-top: 2rem;
+}
+
+table{
+    width: 70rem;
+}
+
+thead{
+    text-align: center;
+    border-bottom: 2px solid rgb(169, 169, 169);
+}
+
+th{
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+tr{
+    text-align: center;
+    border-bottom: 1px solid rgb(169, 169, 169);
+}
+
+td{
+    text-align: center;
+}

@@ -1,0 +1,31 @@
+.sectionGeneral{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: wrap;
+}
+
+.form-group, .sectionSelect{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.sectionBotones{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: wrap;
+    text-align: center;
+}
+
+form{
+    padding-top: 3rem;
+}
+
+textarea{
+    resize: none;
+}
+
+.error{
+    color: red;
+}

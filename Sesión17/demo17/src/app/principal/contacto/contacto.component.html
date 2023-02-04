@@ -1,0 +1,85 @@
+<section class="sectionGeneral">
+  <section class="row sectionForm">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="col-12">
+      <section class="sectionForm-group">
+        <!-- NOMBRE -->
+        <section class="form-group">
+          <input type="text" formControlName="name" class="form-control" required placeholder="Nombre">
+          <section *ngIf="name?.invalid && name?.touched" class="alert alert-danger error">
+            El nombre es requerido
+          </section>
+        </section>
+
+        <!-- CORREO ELECTRONICO-->
+        <section class="form-group">
+          <input type="email" formControlName="email" class="form-control" required placeholder="Correo Electronico">
+          <section *ngIf="email?.invalid && email?.touched" class="alert alert-danger error">
+            El correo electrónico no es valido
+          </section>
+        </section>
+
+      <!-- TELEFONO-->
+        <section class="form-group">
+          <input type="text" maxlength="8" class="form-control" formControlName="telephone" required placeholder="Telefono">
+          <section *ngIf="telephone?.invalid && telephone?.touched" class="alert alert-danger error">
+            El teléfono es requerido
+          </section>
+        </section>
+
+      <!-- SELECCION DE PAISES -->
+        <section class="form-group">
+          <select value="selected" class="form-select" name="paises" id="paises" formControlName="paises" required>
+            <option value="" selected>Seleccionar Pais</option>
+            <option value="peru">Peru</option>
+            <option value="mexico">Mexico</option>
+            <option value="paraguay">Paraguay</option>
+            <option value="brasil">Brasil</option>
+          </select>
+            <section *ngIf="paises?.invalid && paises?.touched" class="alert alert-danger error">
+              Debe elegir un pais
+            </section>
+        </section>
+
+        <!-- SUJETO -->
+        <section class="form-group">
+          <input type="text" formControlName="sujeto" class="form-control" required placeholder="Sujeto">
+          <section *ngIf="sujeto?.invalid && sujeto?.touched" class="alert alert-danger error">
+            El sujeto es requerido
+          </section>
+        </section>
+
+        <!-- MENSAJE-->
+        <section class="form-group">
+          <textarea rows="5" cols="30" formControlName="message" required class="form-control" placeholder="Mensaje"></textarea>
+          <section *ngIf="message?.invalid && message?.touched" class="alert alert-danger error">
+            El mensaje es requerido
+          </section>
+        </section>
+
+        <!-- BUTTON -->
+        <section class="sectionBotones row">
+          <section class="form-group col-6">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+          </section>  
+          <section class="form-group col-6">
+            <input type="button" value="Enviar" class="btn btn-primary" (click)="EnviarDatos()">
+          </section>     
+        </section>
+      </section>
+    </form>
+
+    <!-- FILTRADO POR PAIS -->
+    <section class="col-12 sectionSelect">
+      <select class="form-select form-group" [(ngModel)]="filtradoporPais" required>
+            <option value="">Filtrado por Pais</option>
+            <option value="peru">Peru</option>
+            <option value="mexico">Mexico</option>
+            <option value="paraguay">Paraguay</option>
+            <option value="brasil">Brasil</option>
+      </select>
+      <section class="form-group sectionBotones">
+        <input type="button" value="Filtrar" class="btn btn-primary" (click)="Filtrado()">
+      </section>
+    </section>
+  </section>
+</section>

@@ -1,0 +1,5 @@
+.nav-link:hover{
+    background-color: rgb(54, 222, 255);
+    font-weight: bolder;
+    color: black;
+}
