@@ -1,0 +1,28 @@
+<section class="sectionGeneral container-sm">
+    <section class="sectionForm">
+        <form [formGroup]="loginForm">
+            <h4>Login</h4>
+            <section class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" maxlength="8" class="form-control"  formControlName="username">
+                    <section *ngIf="username?.touched && username?.invalid" class="alert alert-danger">
+                        <section *ngIf="username?.errors?.['required']">
+                            El nombre de usuario es requerido
+                        </section>
+                    </section> 
+            </section>
+            <section class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" maxlength="8" class="form-control"  formControlName="password">
+                    <section *ngIf="password?.touched && password?.invalid" class="alert alert-danger">
+                        <section *ngIf="password?.errors?.['required']">
+                        La contraseña debe tener al menos 8 caracteres
+                        </section>
+                    </section>
+            </section>
+            <section class="form-group sectionButton">
+                <input type="button" class="btn btn-success" [disabled]="!botonDeshabilitado" (click)="login()" value="Log in">
+            </section>            
+        </form>
+    </section>
+</section>

@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg">
+    <section class="container-fluid">
+      <a class="navbar-brand" href="#">INICIO</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <section class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <!--Menu para Login-->
+          <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" routerLink="login" *ngIf="!usuariologueado" >Login</a>
+            <a class="nav-link active text-light" aria-current="page" routerLink="login" *ngIf="usuariologueado" (click)="logout()" >Logout</a>
+          </li>
+          <!--***-->
+          <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" routerLink="post">POST</a>
+          </li>
+        </ul>
+      </section>
+    </section>
+  </nav>

@@ -1,0 +1,45 @@
+
+.sectionGeneral{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: wrap;
+}
+
+.form-group{
+    padding-bottom: 1rem;
+}
+
+.sectionButton{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: wrap;
+}
+
+.sectionForm{
+    padding-top: 3rem;
+}
+
+form{
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 30rem;
+
+    background: #81c5d7;  
+}
+
+h4{
+    text-transform: uppercase;
+    font-weight: bolder;
+
+    letter-spacing: 1rem;
+    text-align: center;
+
+    padding: 1rem;
+}
+
+.btn:hover{
+    background-color: rgb(59, 132, 250);
+    border: 1px solid rgb(59, 132, 250);
+}
