@@ -1,0 +1,13 @@
+.formulario{
+    color: rgb(255, 255, 255);
+}
+
+body{
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    height: 950px;
+}
+
+#titulo1{
+    color: rgb(251, 251, 251);
+}

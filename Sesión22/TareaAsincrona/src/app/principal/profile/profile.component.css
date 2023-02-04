@@ -1,0 +1,9 @@
+body{
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    height: 950px;
+}
+
+#titulo{
+    color: rgb(23, 3, 70);
+}
